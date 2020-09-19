@@ -1,11 +1,11 @@
-//import property from 'lodash/property';
+import property from 'lodash/property';
 
 const getUrl = property('url');
 const hasTarget = (args)=>getUrl(args) === 'a';
 const win = window || {};
 const microSvrBaseUrl = 'micro-url';
 
-/*
+
 function setBaseDomain (target, name, descriptor){
 
   const originFunc = descriptor.value;
@@ -51,4 +51,4 @@ class CommonClass {
   console.log('url', url);
   console.log('win.baseUrl end', win.baseUrl);
 })();
-*/
+
