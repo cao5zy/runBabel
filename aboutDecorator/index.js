@@ -1,7 +1,5 @@
-import property from 'lodash/property';
-
-const getUrl = property('url');
-const hasTarget = (args)=>getUrl(args) === 'a';
+const getUrl = ({url = ''} = {})=>url
+const hasTarget = (args)=>getUrl(args[0]) === 'a';
 const win = window || {};
 const microSvrBaseUrl = 'micro-url';
 
@@ -36,7 +34,7 @@ class CommonClass {
   }
   
   @setBaseDomain
-  getAPIUrl ({url = 'a'}){
+  getAPIUrl ({url = 'a'} = {}){
     const fullUrl = win.baseUrl + '/' + url;
     return fullUrl;
   }
@@ -47,7 +45,7 @@ class CommonClass {
   const obj = new CommonClass();
 
   console.log('win.baseUrl begin', win.baseUrl);
-  const url = obj.getAPIUrl();
+  const url = obj.getAPIUrl({url:'a'});
   console.log('url', url);
   console.log('win.baseUrl end', win.baseUrl);
 })();

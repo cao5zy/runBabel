@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "about decorator",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "./node_modules/.bin/babel ./index.js --out-file ./index.compiled.js"
   },
